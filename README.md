@@ -44,7 +44,8 @@ return [
     'charset' => 'utf8',
 ];
 ```
-3. Run ./yii migrate to create database
+3. Run ./yii migrate to create database 
+4 . For sample data you can import faceit_2017-01-26.sql into your database
 
 
 TESTING
@@ -105,20 +106,3 @@ To execute acceptance tests do the following:
    composer exec codecept run unit,functional
    ```
 
-### Code coverage support
-
-By default, code coverage is disabled in `codeception.yml` configuration file, you should uncomment needed rows to be able
-to collect code coverage. You can run your tests and collect coverage with the following command:
-
-```
-#collect coverage for all tests
-composer exec codecept run -- --coverage-html --coverage-xml
-
-#collect coverage only for unit tests
-composer exec codecept run unit -- --coverage-html --coverage-xml
-
-#collect coverage for unit and functional tests
-composer exec codecept run functional,unit -- --coverage-html --coverage-xml
-```
-
-You can see code coverage output under the `tests/_output` directory.
