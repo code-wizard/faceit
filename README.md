@@ -1,17 +1,7 @@
-Yii 2 Basic Project Template
+Faceit
 ============================
 
-Yii 2 Basic Project Template is a skeleton [Yii 2](http://www.yiiframework.com/) application best for
-rapidly creating small projects.
-
-The template contains the basic features including user login/logout and a contact page.
-It includes all commonly used configurations that would allow you to focus on adding new
-features to your application.
-
-[![Latest Stable Version](https://poser.pugx.org/yiisoft/yii2-app-basic/v/stable.png)](https://packagist.org/packages/yiisoft/yii2-app-basic)
-[![Total Downloads](https://poser.pugx.org/yiisoft/yii2-app-basic/downloads.png)](https://packagist.org/packages/yiisoft/yii2-app-basic)
-[![Build Status](https://travis-ci.org/yiisoft/yii2-app-basic.svg?branch=master)](https://travis-ci.org/yiisoft/yii2-app-basic)
-
+This is a mini face detect app that utilizes Animetrics face detection API to detect faces on any image.
 DIRECTORY STRUCTURE
 -------------------
 
@@ -21,6 +11,7 @@ DIRECTORY STRUCTURE
       controllers/        contains Web controller classes
       mail/               contains view files for e-mails
       models/             contains model classes
+      modules/API         contains the api for the exposing image metadata as a webservice
       runtime/            contains files generated during runtime
       tests/              contains various tests for the basic application
       vendor/             contains dependent 3rd-party packages
@@ -32,59 +23,17 @@ DIRECTORY STRUCTURE
 REQUIREMENTS
 ------------
 
-The minimum requirement by this project template that your Web server supports PHP 5.4.0.
+1. Web server supports PHP 5.4.0.
+2. MySQl
+
+
 
 
 INSTALLATION
 ------------
 
-### Install via Composer
-
-If you do not have [Composer](http://getcomposer.org/), you may install it by following the instructions
-at [getcomposer.org](http://getcomposer.org/doc/00-intro.md#installation-nix).
-
-You can then install this project template using the following command:
-
-~~~
-php composer.phar global require "fxp/composer-asset-plugin:^1.2.0"
-php composer.phar create-project --prefer-dist --stability=dev yiisoft/yii2-app-basic basic
-~~~
-
-Now you should be able to access the application through the following URL, assuming `basic` is the directory
-directly under the Web root.
-
-~~~
-http://localhost/basic/web/
-~~~
-
-
-### Install from an Archive File
-
-Extract the archive file downloaded from [yiiframework.com](http://www.yiiframework.com/download/) to
-a directory named `basic` that is directly under the Web root.
-
-Set cookie validation key in `config/web.php` file to some random secret string:
-
-```php
-'request' => [
-    // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
-    'cookieValidationKey' => '<secret random string goes here>',
-],
-```
-
-You can then access the application through the following URL:
-
-~~~
-http://localhost/basic/web/
-~~~
-
-
-CONFIGURATION
--------------
-
-### Database
-
-Edit the file `config/db.php` with real data, for example:
+1. Clone this repo to you local system
+2. Edit the file `config/db.php` with real data, for example:
 
 ```php
 return [
@@ -95,12 +44,7 @@ return [
     'charset' => 'utf8',
 ];
 ```
-
-**NOTES:**
-- Yii won't create the database for you, this has to be done manually before you can access it.
-- Check and edit the other files in the `config/` directory to customize your application as required.
-- Refer to the README in the `tests` directory for information specific to basic application tests.
-
+3. Run ./yii migrate to create database
 
 
 TESTING
@@ -127,25 +71,13 @@ they perform testing in real browser.
 ### Running  acceptance tests
 
 To execute acceptance tests do the following:  
-
-1. Rename `tests/acceptance.suite.yml.example` to `tests/acceptance.suite.yml` to enable suite configuration
-
-2. Replace `codeception/base` package in `composer.json` with `codeception/codeception` to install full featured
-   version of Codeception
-
-3. Update dependencies with Composer 
-
-    ```
-    composer update  
-    ```
-
-4. Download [Selenium Server](http://www.seleniumhq.org/download/) and launch it:
+1. Download [Selenium Server](http://www.seleniumhq.org/download/) and launch it:
 
     ```
     java -jar ~/selenium-server-standalone-x.xx.x.jar
     ``` 
 
-5. (Optional) Create `yii2_basic_tests` database and update it by applying migrations if you have them.
+2. (Optional) Create `faceit_tests` database and update it by applying migrations if you have them.
 
    ```
    tests/bin/yii migrate
@@ -154,13 +86,13 @@ To execute acceptance tests do the following:
    The database configuration can be found at `config/test_db.php`.
 
 
-6. Start web server:
+3. Start web server:
 
     ```
     tests/bin/yii serve
     ```
 
-7. Now you can run all available tests
+4. Now you can run all available tests
 
    ```
    # run all available tests

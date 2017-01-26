@@ -198,6 +198,10 @@ class PHPUnit_TextUI_Command
             $return = PHPUnit_TextUI_TestRunner::EXCEPTION_EXIT;
         }
 
+        if ($exit) {
+            exit($return);
+        }
+
         return $return;
     }
 
@@ -860,7 +864,7 @@ class PHPUnit_TextUI_Command
      * @param string $printerClass
      * @param string $printerFile
      *
-     * @return PHPUnit_Util_Printer
+     * @return PHPUnit_Util_Printer|string
      */
     protected function handlePrinter($printerClass, $printerFile = '')
     {
@@ -1150,6 +1154,7 @@ EOT;
     }
 
     /**
+     * @param string $message
      */
     private function showError($message)
     {

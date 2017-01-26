@@ -2,6 +2,24 @@
 
 All notable changes of the PHPUnit 5.7 release series are documented in this file using the [Keep a CHANGELOG](http://keepachangelog.com/) principles.
 
+## [5.7.7] - 2017-01-25
+
+### Fixed
+
+* Fixed [#1896](https://github.com/sebastianbergmann/phpunit/issues/1896): Wrong test location when `@depends` and `@dataProvider` are combined
+* Fixed [#1983](https://github.com/sebastianbergmann/phpunit/pull/1983): Tests with `@expectedException` annotation cannot be skipped
+* Fixed [#2137](https://github.com/sebastianbergmann/phpunit/issues/2137): Warnings for invalid data providers are suppressed when test execution is filtered
+* Fixed [#2275](https://github.com/sebastianbergmann/phpunit/pull/2275): Invalid UTF-8 characters can lead to missing output
+* Fixed [#2299](https://github.com/sebastianbergmann/phpunit/issues/2299): `expectExceptionMessage()` and `expectExceptionCode()` do not work without `expectException()`
+* Fixed [#2328](https://github.com/sebastianbergmann/phpunit/issues/2328): `TestListener` callbacks `startTest()` and `endTest()` are not called when test is skipped due to `@depends`
+* Fixed [#2331](https://github.com/sebastianbergmann/phpunit/issues/2331): Boolean environment variable values specified in XML get mangled
+* Fixed [#2333](https://github.com/sebastianbergmann/phpunit/issues/2333): `assertContains()` and `assertNotContains()` do not handle UTF-8 strings correctly
+* Fixed [#2340](https://github.com/sebastianbergmann/phpunit/pull/2340): Data providers that use `yield` or implement `Iterator` cannot be combined 
+* Fixed [#2349](https://github.com/sebastianbergmann/phpunit/pull/2349): `PHPUnit_TextUI_Command` does not `exit()` when it should
+* Fixed [#2392](https://github.com/sebastianbergmann/phpunit/issues/2392): Empty (but valid) data provider should skip the test
+* Fixed [#2431](https://github.com/sebastianbergmann/phpunit/issues/2431): `assertArraySubset()` does not support `ArrayAccess`
+* Fixed [#2435](https://github.com/sebastianbergmann/phpunit/issues/2435): Empty `@group` annotation causes error on PHP 7.2+
+
 ## [5.7.6] - 2017-01-22
 
 ### Fixed
@@ -57,6 +75,7 @@ All notable changes of the PHPUnit 5.7 release series are documented in this fil
 * The `--tap` and `--log-tap` commandline options have been deprecated
 * The `--self-update` and `--self-upgrade` commandline options have been deprecated (PHAR binary only)
 
+[5.7.7]: https://github.com/sebastianbergmann/phpunit/compare/5.7.6...5.7.7
 [5.7.6]: https://github.com/sebastianbergmann/phpunit/compare/5.7.5...5.7.6
 [5.7.5]: https://github.com/sebastianbergmann/phpunit/compare/5.7.4...5.7.5
 [5.7.4]: https://github.com/sebastianbergmann/phpunit/compare/5.7.3...5.7.4
