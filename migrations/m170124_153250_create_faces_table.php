@@ -18,6 +18,8 @@ class m170124_153250_create_faces_table extends Migration
         $this->createTable('faces', [
             'id' => $this->primaryKey(),
             'image_id' => $this->integer()->notNull(),
+            'width' => $this->integer()->notNull(),
+            'height' => $this->integer()->notNull(),
             'confident_level' => $this->string(),
             'gender' => $this->string(),
         ]);
