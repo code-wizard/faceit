@@ -109,12 +109,19 @@ To execute acceptance tests do the following:
 WEB SERVICE
 -----------
 
-
+```
 GET /images: list all users page by page;
+
 HEAD /images: show the overview information of user listing;
+
 GET /images/123: return the details of the user 123;
+
 HEAD /images/123: show the overview information of images 123;
+
 PATCH /images/123 and PUT /images/123: update the image 123;
+
 DELETE /images/123: delete the user 123;
+
+```
 
 
